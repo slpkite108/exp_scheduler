@@ -1,3 +1,5 @@
+# Indev Vibe Coding
+
 # exp-auto-scheduler
 
 다양한 모델/하이퍼파라미터 실험을 먼저 1 epoch으로 프로파일링한 뒤, 수집된 GPU 메모리 사용량·실행 시간·실패 여부를 기반으로 현재 장비에 맞춰 자동 스케줄링하는 Python 라이브러리입니다.
