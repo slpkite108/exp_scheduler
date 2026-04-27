@@ -1,0 +1,20 @@
+scheduler:
+  work_dir: runs/demo
+  max_gpu_memory_fraction: 0.90
+  reserve_gpu_memory_mb: 512
+  safety_margin_mb: 256
+  unknown_gpu_mem_mb: 1024
+  max_parallel_cpu: 2
+
+experiments:
+  - name: "dummy_lr{lr}_bs{batch_size}"
+    command: "python examples/dummy_train.py --lr {lr} --batch-size {batch_size} --epochs {epochs} --sleep {sleep}"
+    params:
+      epochs: 4
+      sleep: 0.2
+    probe_params:
+      epochs: 1
+    grid:
+      lr: [0.001, 0.0003]
+      batch_size: [16, 32]
+    num_gpus: 1

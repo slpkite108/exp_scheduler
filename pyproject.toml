@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exp-auto-scheduler"
+version = "0.1.0"
+description = "Automatic experiment profiler and GPU-aware scheduler for ML training commands."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Experiment Scheduler"}]
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+exp-scheduler = "exp_scheduler.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["exp_scheduler*"]
